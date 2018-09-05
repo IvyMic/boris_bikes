@@ -1,14 +1,12 @@
 require 'bike.rb'
 
+
 describe Bike do
-  let(:bike){Bike.new}
-  it 'tests that instance of Bike Class responds to working?' do
-    expect(bike).to respond_to(:working?)
-  end
-  
+  it {is_expected.to respond_to :working?}
+
   describe "#working?" do
-    it "returns true" do
-      expect(bike.working?).to eql(true)
+    it "return true" do
+      expect(subject).to be_working
     end
   end
 end
